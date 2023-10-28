@@ -1,14 +1,6 @@
-
 import os
-import openai
-openai.api_key_path ='/Users/muni/Desktop/secret_key.py'
+from langchain.llms import OpenAI
 
-completion = openai.ChatCompletion.create(
-  model="gpt-3.5-turbo",
-  messages=[
-    {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex mathematical concepts with creative flair."},
-    {"role": "user", "content": "Compose a sonnet that explains the concept of integration."}
-  ]
-)
-
-print(completion.choices[0].message)
+llm=OpenAI(temperature=0.8)
+baby_name=llm('Suggest me 10 baby name for Indian girl from the Ramayana')
+print(baby_name)
