@@ -1,7 +1,7 @@
 
 import os
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key_path ='/Users/muni/Desktop/secret_key.py'
 
 completion = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
